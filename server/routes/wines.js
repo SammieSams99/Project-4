@@ -16,12 +16,12 @@ router.get("/:id", (req,res) => {
 
 // // new/ create new wine 
 //POST
-// router.post('/', (req,res) => {
+// router.post('/new', (req,res) => {
 //     res.send(`Update a wine ${req.params.id}`)
 // })
 
 // UPDATE/PUT
-// router.put('/:id (req,res) => {
+// router.put('/:id/edit' (req,res) => {
 //      res.send(`Update a Wine ${req.body.id}`)
 // })
 
