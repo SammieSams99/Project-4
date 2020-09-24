@@ -1,12 +1,9 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-// define our schema - a blueprint of what an article
+// define our schema - a blueprint of what a wine entry should look like
 const wineSchema = new Schema({
     // set a prop called wines and we make sure it:
-    //  - is a string
-    //  - exists (is required)
-    //  - is unique
     name: { type: String, required: true, unique: true },
     region: { type: String, required: true },
     vintage: {type: Date, required: true},

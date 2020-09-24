@@ -1,13 +1,9 @@
-// require statements
+// CREATED userSchema:
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-// define our schema - a blueprint of what an article
+// define our schema - a blueprint of what a USER should look like
 const userSchema = new Schema({
-    // set a prop called title and we make sure it:
-    //  - is a string
-    //  - exists (is required)
-    //  - is unique
     name: { type: String, 
             required: true },
     email: {type: String, 
@@ -22,8 +18,8 @@ const userSchema = new Schema({
 })
 
 
-// use the schema to create a Model
+// USE THE SCHEMA TO CREATE A MODEL
 const User = mongoose.model('User', userSchema)
 
-// module.exports statement
+// MODULE.EXPORTS STATEMENT
 module.exports = User

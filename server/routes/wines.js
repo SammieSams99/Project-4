@@ -1,32 +1,35 @@
+// CREATING WINES ROUTES WITH CRUD FUNCTIONALITY
 const express = require('express')
 const router = express.Router()
 
 
-// All Users Wines Route
+// ALL USERS WINE ENTRIES
 router.get('/',(req, res) => {
     res.send("Get All Wines")
 })
 
 
-// // get 1 wine (getwinebyid)
-// // Choose Single Wine Route
+// ONE OF THE USERS WINE ENTRIES FOUND BY ID
+    // GET BY ID
 router.get("/:id", (req,res) => {
     res.send(`Get one by id  ${req.params.id}`)
 })
 
-// // new/ create new wine 
-//POST
+// CREATE NEW WINE
+    //POST
 // router.post('/new', (req,res) => {
 //     res.send(`Update a wine ${req.params.id}`)
 // })
 
-// UPDATE/PUT
+// UPDATE WINE BY ID
+    // PUT
 // router.put('/:id/edit' (req,res) => {
 //      res.send(`Update a Wine ${req.body.id}`)
 // })
 
-// delete wines (byid)
-//  DELETE
+
+//  DELETE/DESTROY WINE BY ID
+    // DELETE
 // router.delete('/:id, (req, res) => {
 //      res.send(`Update a wine ${req.params.id}`)
 // })
