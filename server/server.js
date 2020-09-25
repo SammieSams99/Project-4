@@ -23,7 +23,8 @@ db.on("error", (err) => {
 
 app.use("/wines", require("./routes/wines"))
 // /AUTH ROUTE REQUIRES ./ROUTES/AUTH
-app.use("/auth", require("./routes/auth"))
+// app.use("/auth", require("./routes/auth"))
+
 
 app.listen(3001, () => {
     console.log('Listening on 3001');
