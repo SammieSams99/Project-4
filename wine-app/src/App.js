@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 import './App.css';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Home from './components/Home'
 import Nav from './components/Nav'
 import Entry from './components/Entry'
+import Register from "./components/auth/Register"
 
 
 const myWines = [
@@ -24,8 +25,12 @@ function App() {
     <Router>
     <div className="App">
       <Nav/>
+      <Switch>
       <Route exact path="/" render={ () => <Home wines={wines} />}/>
       <Route exact path="/entry" render={ () => <Entry name={name} changeName={setName} addEntry={addWine}/>}/>
+      <Route exact path="/register" render={ () => <Register/>
+
+      </Switch>
     </div>
     </Router>
   );

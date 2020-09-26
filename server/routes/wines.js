@@ -1,6 +1,7 @@
 // CREATING WINES ROUTES WITH CRUD FUNCTIONALITY
 const express = require('express')
 const router = express.Router()
+const Wine = require("../models/Wine")
 
 
 // ALL USERS WINE ENTRIES
@@ -12,6 +13,21 @@ router.get('/',(req, res) => {
     //POST
 router.post('/', (req,res) => {
     // USING THE WINE MODEL SAVE REQ.BODY TO THE DB
+    Wine.create({ 
+        userId:req.body.userId,
+        name:req.body.name,
+        region: req.body.region,
+        vintage: req.body.vintage,
+        recommended: req.body.recommended,
+        notes: req.body.notes,
+        comments: req.body.comments,
+        starRating: req.body.starRating
+    })
+    .then(wine => {
+        console.log("This is" + wine)
+        res.send(wine)
+    })
+    .catch(error => res.send({message:'error creating new wine', error}))
     // RETURN THE LIST OF WINES
 })
 

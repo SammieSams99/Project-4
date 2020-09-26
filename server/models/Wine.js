@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+// const User = require('./User')
 
 // define our schema - a blueprint of what a wine entry should look like
 const wineSchema = new Schema({
@@ -7,10 +8,11 @@ const wineSchema = new Schema({
     name: { type: String, required: true, unique: true },
     region: { type: String, required: true },
     vintage: {type: Date, required: true},
-    recommended: {type: Boolean},
-    notes: {type:String},
-    comments: [{ body: String, commentDate: Date.now}],
-    starRating: { type: Number, min:0, max:10 },
+    recommended: {type: Boolean, required: true},
+    notes: {type:String, required: true},
+    comments: { type: String },
+    starRating: { type: Number, required: true,  min:0, max:10 },
+    userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 })
 
 

@@ -2,6 +2,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+
 // define our schema - a blueprint of what a USER should look like
 const userSchema = new Schema({
     name: { type: String, 
@@ -9,11 +10,10 @@ const userSchema = new Schema({
     email: {type: String, 
             required: true , 
             unique: true, },
-    body: String,
-    password: { body: String, 
+    password: { type: String, 
                 required: true,
-                min: 7,
-                max: 12 }
+                minlength: 7,
+                maxlength: 12 }
 
 })
 
