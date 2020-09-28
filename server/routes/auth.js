@@ -5,16 +5,6 @@ const User = require("../models/User")
 
 
 // LOGIN
-router.get('/login', (req, res) => {
-    res.send("User Login")
-})
-
-
-// // get 1 wine (getwinebyid)
-// // Choose Single Wine Route
-router.get("/register", (req, res) => {
-    res.send("Register User")
-})
 
 router.post("/register", (req, res) => {
     console.log(req.body, 'Register')
@@ -54,9 +44,19 @@ router.post("/register", (req, res) => {
 
 // DELETE/DESTROY USERS COOKIES ON LOGOUT
 // changing to GET to check functionality
-router.get('/logout', (req, res) => {
-    res.send("Logout Page")
-})
+// BUILD OUT A POST ROUTE
+// FIND USER , CHECK IF PW MATCHS PW IN DB AND THEN Response.SEND USER IF NO ERROR
+// router.post('/logout', (req, res) => {
+//     res.send("Logout Page")
+// })
+const logout = (req, res) => {
+    if (!req.user) return res.json({
+      message: 'No User to log out'
+    })
+  
+    req.logout()
+    res.json({ message: "User logged out" })
+}
 
 
 

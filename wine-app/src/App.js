@@ -6,6 +6,7 @@ import Home from './components/Home'
 import Nav from './components/Nav'
 import Entry from './components/Entry'
 import Register from "./components/auth/Register"
+import Login from "./components/Login"
 
 
 const myWines = [
@@ -21,19 +22,19 @@ function App() {
       setWines(response.data)
     })
   }
-  return (
-    <Router>
-    <div className="App">
-      <Nav/>
-      <Switch>
-      <Route exact path="/" render={ () => <Home wines={wines} />}/>
-      <Route exact path="/entry" render={ () => <Entry name={name} changeName={setName} addEntry={addWine}/>}/>
-      <Route exact path="/register" render={ () => <Register/>
-
-      </Switch>
-    </div>
-    </Router>
-  );
-}
+return (
+      <Router>
+      <div className="App">
+        <Nav/>
+        <Switch>
+          <Route exact path="/" exact component={Home}/>
+          <Route exact path="/entry" component={Entry}/>
+          <Route exact path="/login" component={Login}/>
+          <Route exact path="/register" component={Register}/>
+        </Switch>
+      </div>
+      </Router>
+    );
+  }
 
 export default App;
